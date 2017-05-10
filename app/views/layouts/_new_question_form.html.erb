@@ -1,0 +1,15 @@
+<%= form_for(@question) do |f| %>
+  <div class="field">
+    <%= f.label :title, "Enter Your Question:" %>
+    <%= f.text_field :title, class: "quest_input" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description, "Tell Us More:" %>
+    <%= f.text_area :description, class: "quest_desc" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit("Submit Your Question") %>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+<h1>Edit "<%= @question.title %>"</h1>
+
+<%= form_for(@question) do |f| %>
+  <div class="field">
+    <%= f.label :title, "Enter Your Question:" %>
+    <%= f.text_field :title, value: @question.title, class: "quest_input" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description, "Tell Us More:" %>
+    <%= f.text_area :description, value: @question.description, class: "quest_desc" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit("Update Your Question") %>
+  </div>
+<% end %>

@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+.question_deets {
+  margin-left: 100px;
+  margin-right: 900px;
+  background-color: #a3f441;
+  background-blend-mode:color-dodge;
+}
+
+.question_desc {
+  font-size: 20px;
+  display: inline-block;
+  padding-right: 22px;
+}
+
+.field {
+  padding: 10px;
+  font-size: 18px;
+}
+
+input[type=text]:focus {
+  background-color: lightblue;
+  border: 3px solid #555;
+}
+
+.flash {
+  padding: 1em;
+  background-color: #3B9089;
+}

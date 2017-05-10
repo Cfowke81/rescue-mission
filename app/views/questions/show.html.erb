@@ -1,0 +1,43 @@
+<h1><%= @question.title %></h1>
+
+<h2>Asked by: <%= @question.user.name %></h2>
+
+<ul class="question_deets">
+  <div class="question_desc">
+    <%= markdown(@question.description) %>
+  </p>
+</ul>
+
+<% if @question.user === current_user  %>
+  <div class="edit_delete">
+    <%= button_to 'Edit your question', edit_question_path(@question), method: :get %>
+    <%= button_to 'Delete your question', @question, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+<% end %>
+
+<%= button_to 'Answer this question', new_question_answer_path(@question), method: :get %>
+
+<h3> Answers for this question</h3>
+
+<ul>
+  <% @answers.each do |answer| %>
+    <% if @question.user == current_user %>
+      <% if answer.best_answer == true %>
+        <div><%= 'User selected best answer' %><%= markdown(answer.answer) %> --- <%= answer.user.name %>
+        <%= answer.votes.count %>
+        <%= button_to 'Upvote', upvote_question_answer_path(@question, answer), method: :post %>
+      </div>
+      <% else %>
+        <div><%= button_to 'Best Answer?', answer_path(answer), method: :patch %><%= markdown(answer.answer) %> --- <%= answer.user.name %>
+            <%= answer.votes.count %>
+            <%= button_to 'Upvote', upvote_question_answer_path(@question, answer), method: :post %>
+        </div>
+      <% end %>
+    <% else %>
+      <div><%= markdown(answer.answer) %> --- <%= answer.user.name %>
+      <%= answer.votes.count %>
+      <%= button_to 'Upvote', upvote_question_answer_path(@question, answer), method: :post %>
+    </div>
+    <% end %>
+  <% end %>
+</ul>

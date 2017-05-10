@@ -1,0 +1,37 @@
+// Place all the styles related to the Questions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.quest_input {
+  width: 350px;
+  padding: 10px 10px;
+  margin: 8px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.quest_desc {
+  width: 350px;
+  height: 150px;
+  padding: 10px 10px;
+  margin-left: 60px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.question_deets {
+  margin-left: 100px;
+  margin-right: 900px;
+  background-color: #a3f441;
+  background-blend-mode:color-dodge;
+}
+
+#question_desc {
+  font-size: 20px;
+  display: inline-block;
+  padding-right: 22px;
+}
